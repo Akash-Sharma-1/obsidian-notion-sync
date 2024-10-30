@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "obsidian-notion-sync"
+description = "Sync Obsidian notes to Notion via GitHub"
+readme = "README.md"
+version = "0.1"
+requires-python = ">=3.7"
+license = "MIT"
+authors = [
+    {name = "Akash Sharma", email = "howdy.akash@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "PyGithub>=1.55",
+    "notion-client>=1.0.0",
+    "markdown2>=2.4.0",
+    "requests>=2.25.0",
+]
+
+[project.scripts]
+obsidian-notion-sync = "obsidian_notion_sync.cli:main"
+
+
+[project.urls]
+Documentation = "https://github.com/Akash-Sharma-1/Obsidian-Second-Brain"
+Issues = "https://github.com/Akash-Sharma-1/Obsidian-Second-Braine/issues"
+Source = "https://github.com/Akash-Sharma-1/Obsidian-Second-Brain"
+
+[tool.hatch.build]
+include = [
+    "src/obsidian_notion_sync/**/*.py"
+]
+packages = ["src/obsidian_notion_sync"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/obsidian_notion_sync"]
