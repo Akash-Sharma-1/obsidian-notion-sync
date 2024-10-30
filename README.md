@@ -10,8 +10,8 @@ A tool to sync Obsidian notes to Notion via GitHub.
 pip install obsidian-notion-sync
 ```
 
-[![PyPI - Version](https://img.shields.io/pypi/v/obisidian-notion-sync.svg)](https://pypi.org/project/obisidian-notion-sync)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/obisidian-notion-sync.svg)](https://pypi.org/project/obisidian-notion-sync)
+[![PyPI - Version](https://img.shields.io/pypi/v/obsidian-notion-sync.svg)](https://pypi.org/project/obsidian-notion-sync)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/obsidian-notion-sync.svg)](https://pypi.org/project/obsidian-notion-sync)
 
 ## Usage
 
