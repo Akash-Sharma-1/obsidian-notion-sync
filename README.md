@@ -2,6 +2,8 @@
 
 A tool to sync Obsidian notes to Notion via GitHub.
 
+![Diagram](img/productImage.png)
+
 ## Installation
 
 ```bash

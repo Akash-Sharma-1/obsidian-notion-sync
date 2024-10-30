@@ -23,6 +23,6 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: |
-          cd src/obsidian-notion-sync
+          cd src/obsidian_notion_sync
           python sync_to_notion.py
     
