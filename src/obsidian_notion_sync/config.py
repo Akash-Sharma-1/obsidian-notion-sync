@@ -22,7 +22,7 @@ class SyncConfig:
             'NOTION_TOKEN': os.getenv('NOTION_TOKEN'),
             'OBSIDIAN_DIR': os.getenv('OBSIDIAN_DIR'),
             'REPO_NAME': os.getenv('REPO_NAME'),
-            'NOTION_DATABASE_ID': os.getenv('NOTION_DATABASE_ID')
+            'NOTION_PAGE_ID': os.getenv('NOTION_PAGE_ID')
         }
         
         missing_vars = [k for k, v in required_vars.items() if not v]
@@ -34,5 +34,5 @@ class SyncConfig:
             notion_token=required_vars['NOTION_TOKEN'],
             obsidian_dir=Path(required_vars['OBSIDIAN_DIR']),
             repo_name=required_vars['REPO_NAME'],
-            notion_database_id=required_vars['NOTION_DATABASE_ID']
+            notion_database_id=required_vars['NOTION_PAGE_ID']
         )

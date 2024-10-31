@@ -183,7 +183,7 @@ def main():
 
 
     token = os.environ['NOTION_TOKEN']
-    database_id = os.environ['NOTION_DATABASE_ID']
+    database_id = os.environ['NOTION_PAGE_ID']
     
     # token  = "ntn_n86226317751aU2crpu2oajjJgrlUPN9hvSZXk5RGJq00x"
     # database_id  = "12e201f2eb5f807f9621deebbec44b4a"
