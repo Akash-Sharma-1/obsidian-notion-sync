@@ -15,8 +15,6 @@
 
 # Obsidian Notion Sync
 
----
-
 # 📩 Installation
 
 ```bash
@@ -29,17 +27,17 @@ pip install obsidian-notion-sync
 
 # 🔄 Usage
 
-Basic sync:
+Basic **sync**:
 ```bash
 obsidian-notion-sync
 ```
 
-Enable debug logging:
+Enable **debug logging**:
 ```bash
 obsidian-notion-sync --debug
 ```
 
-View help:
+View **help**:
 ```bash
 obsidian-notion-sync --help
 ```
@@ -52,23 +50,28 @@ obsidian-notion-sync --help
 
 ## 🎯 Detailed workflow 
 
-### 1. Takes up file all the files from your obsidian vault. 
+### Step 1 : Takes up file all the files from your obsidian vault. 
+Uses the vault path given in the env variable
 
 ![Obsidian Vault](img/obsidian_vault.png)
 
-### 2. Upon the running of the command Places it at the place of invocation (directory named 'ObsidianClonedVault')
+### Step 2 : Upon the running of the command, it copies the value at the place of invocation 
+Choose a place of invocation and it creates a directory named 'ObsidianClonedVault'.
    
 ![Collected Locally](img/CollectedLocally.png)
 
-### 3. It then syncs this folder with a Github Repo (you can supply the name for an existing repo or it would create a new one)  
+### Step 3 : It then syncs this folder with a Github Repo 
+You can supply the name for an existing repo or it would create a new one with the given name in the env variable.
 
 ![Github sycning](img/SyncingWithGithub.png)
 
-### 4. Once the syncing is completed, it triggers a Github action that uploads these files to notion via Notion APIs
+### Step 4 : Once the syncing is completed, it triggers a Github action that uploads these files to notion via Notion APIs.
+A Github workflow runs in the Github action space. You will get a mail if it fails for some reason. Check the logs for more debugging on that front.
 
 ![Github Actions](img/GithubActions.png)
 
-### 5.  Voila ! You can now access your notes on Notion too !
+### Step 5 : Voila ! You can now access your notes on Notion too !
+If everything goes well, it will update your notion page specified in the env variable.
 
 ![Notion Populates](img/Notion%20Populated.png)
 
@@ -92,13 +95,13 @@ Before using the tool, you need to set up the following environment variables:
    - Create a new token with 'repo' permissions
    
 2. **Notion Token**: 
-__(more details below)__
+__(more details below on its access)__
    - Go to www.notion.so/my-integrations
    - Create a new integration
    - Copy the integration token
    
 3. **Notion page ID**: 
-__(more details below)__
+__(more details below on its access)__
    - Create a new page in Notion
    - Copy the page ID from the URL (it's the part after the page name and after the last '-')
 
@@ -122,23 +125,28 @@ Save this as `run-sync.sh`, make it executable (`chmod +x run-sync.sh`), and run
 ## 📄 Setting up your notion page
 __(Skip this section if you were able to set the notion api tokens and page access  )__
 
-### 1. Create a notion page (The red box highlighted is the Page Id - you need)
+### Step 1 : Create a notion page for storing your Obsidian Vault
+The red box highlighted is the Page Id - it is a 32 sized alphanumeric unique ID for the page which starts after the name of your page.
 
 ![Notion Page](img/Obsidian_notion_page.png)
 
-### 2. Go to https://www.notion.so/profile/integrations 
-   
+### Step 2 : Go to https://www.notion.so/profile/integrations 
+You can open it from the settings in your notion app as well.
+
 ![Integration](img/Integrations.png)
 
-### 3. Create an integration  
+### Step 3 : Create an integration  
+You can use the API tokens of an existing integration as well. Make sure it has the permission to read + write content.
 
 ![New Integration](img/NewIntegrations.png)
 
-### 4. Copy this token 
+### Step 4 : Copy this token 
+Set this token as your environment variable as mentioned above.
 
 ![Copy This token](img/CopyThisToken.png)
 
-### 5. Allow your notion page to gain access
+### Step 5 : Allow your notion page to gain access
+It will not have access to this connection by default.
 
 ![Allow page for integration access](img/PageAccessToIntegration.png)
 
