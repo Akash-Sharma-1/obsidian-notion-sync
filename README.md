@@ -14,19 +14,8 @@
 ---
 
 # Obsidian Notion Sync
-- [Obsidian Notion Sync](#obsidian-notion-sync)
-- [📩 Installation](#-installation)
-- [🔄 Usage](#-usage)
-- [🎛️ How does it work ?](#️-how-does-it-work-)
-  - [🎯 Detailed workflow details](#-detailed-workflow-details)
-- [🛠️ Configuration](#️-configuration)
-  - [🍪 Setting up tokens](#-setting-up-tokens)
-  - [📄 (Detailed) Setting up notion page](#-detailed-setting-up-notion-page)
-  - [📑 Example Configuration Script](#-example-configuration-script)
-  - [🖥️ Troubleshooting](#️-troubleshooting)
-  - [🧑‍🧑‍🧒‍🧒 Support](#-support)
-  - [License](#license)
-- [📂 Directory structure:](#-directory-structure)
+
+---
 
 # 📩 Installation
 
@@ -57,29 +46,29 @@ obsidian-notion-sync --help
 
 # 🎛️ How does it work ? 
 
-This is how the pipeline's overview looks like: 
+### This is how the pipeline's overview looks like: 
 
 ![Pipeline](img/Pipeline.png)
 
-## 🎯 Detailed workflow details 
+## 🎯 Detailed workflow 
 
-1. Takes up file all the files from your obsidian vault. 
+### 1. Takes up file all the files from your obsidian vault. 
 
 ![Obsidian Vault](img/obsidian_vault.png)
 
-2. Upon the running of the command Places it at the place of invocation (directory named 'ObsidianClonedVault')
+### 2. Upon the running of the command Places it at the place of invocation (directory named 'ObsidianClonedVault')
    
 ![Collected Locally](img/CollectedLocally.png)
 
-3. It then syncs this folder with a Github Repo (you can supply the name for an existing repo or it would create a new one)  
+### 3. It then syncs this folder with a Github Repo (you can supply the name for an existing repo or it would create a new one)  
 
 ![Github sycning](img/SyncingWithGithub.png)
 
-4. Once the syncing is completed, it triggers a Github action that uploads these files to notion via Notion APIs
+### 4. Once the syncing is completed, it triggers a Github action that uploads these files to notion via Notion APIs
 
 ![Github Actions](img/GithubActions.png)
 
-5.  Voila ! You can now access your notes on Notion too !
+### 5.  Voila ! You can now access your notes on Notion too !
 
 ![Notion Populates](img/Notion%20Populated.png)
 
@@ -113,30 +102,7 @@ __(more details below)__
    - Create a new page in Notion
    - Copy the page ID from the URL (it's the part after the page name and after the last '-')
 
-## 📄 (Detailed) Setting up notion page 
-__(Skip this section if you were able to set the notion api tokens and page access  )__
-
-1. Create a notion page (The red box highlighted is the Page Id - you need)
-
-![Notion Page](img/Obsidian_notion_page.png)
-
-2. Go to https://www.notion.so/profile/integrations 
-   
-![Integration](img/Integrations.png)
-
-3. Create an integration  
-
-![New Integration](img/NewIntegrations.png)
-
-4. Copy this token 
-
-![Copy This token](img/CopyThisToken.png)
-
-5. Allow your notion page to gain access
-
-![Allow page for integration access](img/PageAccessToIntegration.png)
-
-## 📑 Example Configuration Script
+### 📑 Example Configuration Script
 
 You can create a shell script to set up your environment:
 
@@ -152,6 +118,29 @@ obsidian-notion-sync --debug
 ```
 
 Save this as `run-sync.sh`, make it executable (`chmod +x run-sync.sh`), and run it with `./run-sync.sh`.
+
+## 📄 Setting up your notion page
+__(Skip this section if you were able to set the notion api tokens and page access  )__
+
+### 1. Create a notion page (The red box highlighted is the Page Id - you need)
+
+![Notion Page](img/Obsidian_notion_page.png)
+
+### 2. Go to https://www.notion.so/profile/integrations 
+   
+![Integration](img/Integrations.png)
+
+### 3. Create an integration  
+
+![New Integration](img/NewIntegrations.png)
+
+### 4. Copy this token 
+
+![Copy This token](img/CopyThisToken.png)
+
+### 5. Allow your notion page to gain access
+
+![Allow page for integration access](img/PageAccessToIntegration.png)
 
 
 ## 🖥️ Troubleshooting
@@ -173,16 +162,18 @@ If you encounter errors:
 
 4. Check that your Notion integration is properly configured and has access to the page
 
-## 🧑‍🧑‍🧒‍🧒 Support
+# 🧑‍🧑‍🧒‍🧒 Support
 
 If you encounter any issues, please file them on our GitHub repository's issue tracker.
 
+# 🧑‍💻👩‍💻 Contribution
 
-## License
+The agenda is to make this package as the easy and smooth package (with lesser bugs ;) for syncing a multitude for note taking applications but firstly achieve a robust two way sync between notion and obsidian.
 
-`obisidian-notion-sync` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+Please refer to the ![CONTRIBUTING.md](CONTRIBUTING.md) for more details. (TBD with more implementation and design considerations)
 
-# 📂 Directory structure:
+
+# 📂 Directory structure of the project:
 ```
 # obsidian_notion_sync/
 # ├── .github/
@@ -205,3 +196,7 @@ If you encounter any issues, please file them on our GitHub repository's issue t
 # ├── README.md
 # ├── pyproject.toml
 ```
+
+## License
+
+`obisidian-notion-sync` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
