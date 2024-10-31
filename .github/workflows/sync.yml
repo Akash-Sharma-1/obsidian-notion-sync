@@ -21,7 +21,7 @@ jobs:
       - name: Sync to Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
           cd src/obsidian_notion_sync
           python sync_to_notion.py

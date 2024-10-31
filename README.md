@@ -25,7 +25,7 @@ Before using the tool, you need to set up the following environment variables:
 | NOTION_TOKEN | Your Notion integration token | secret_5678... |
 | OBSIDIAN_DIR | Path to your Obsidian vault | /Users/you/ObsidianVault |
 | REPO_NAME | Name for the GitHub repository | My-Second-Brain |
-| NOTION_DATABASE_ID | ID of your Notion database | abc123... |
+| NOTION_PAGE_ID | ID of your Notion page | abc123... |
 
 ### Setting up tokens
 
@@ -33,14 +33,35 @@ Before using the tool, you need to set up the following environment variables:
    - Go to GitHub Settings → Developer Settings → Personal Access Tokens
    - Create a new token with 'repo' permissions
    
-2. **Notion Token**:
+2. **Notion Token**: 
+__(more details below)__
    - Go to www.notion.so/my-integrations
    - Create a new integration
    - Copy the integration token
    
-3. **Notion Database ID**:
-   - Create a new database in Notion
-   - Copy the database ID from the URL (it's the part after the workspace name and before the '?')
+3. **Notion page ID**: 
+__(more details below)__
+   - Create a new page in Notion
+   - Copy the page ID from the URL (it's the part after the page name and after the last '-')
+
+### (Detailed) Setting up notion page 
+__(Skip this section if you were able to set the notion api tokens and page access  )__
+
+1. Create a notion page (The red box highlighted is the Page Id - you need)
+![Notion Page](img/Obsidian_notion_page.png)
+
+2. Go to https://www.notion.so/profile/integrations 
+![Integration](img/Integrations.png)
+
+3. Create an integration  
+![New Integration](img/NewIntegrations.png)
+
+4. Copy this token 
+![Copy This token](img/CopyThisToken.png)
+
+5. Allow your notion page to gain access
+![Allow page for integration access](img/PageAccessToIntegration.png)
+
 
 ## Usage
 
@@ -69,7 +90,7 @@ export GITHUB_TOKEN="your_github_token"
 export NOTION_TOKEN="your_notion_token"
 export OBSIDIAN_DIR="/path/to/your/obsidian/vault"
 export REPO_NAME="your-repo-name"
-export NOTION_DATABASE_ID="your_database_id"
+export NOTION_PAGE_ID="your_page_id"
 
 obsidian-notion-sync --debug
 ```
@@ -86,14 +107,14 @@ If you encounter errors:
    echo $NOTION_TOKEN
    echo $OBSIDIAN_DIR
    echo $REPO_NAME
-   echo $NOTION_DATABASE_ID
+   echo $NOTION_PAGE_ID
    ```
 
 2. Ensure your Obsidian vault path exists and is accessible
 
 3. Verify that your GitHub token has the necessary permissions
 
-4. Check that your Notion integration is properly configured and has access to the database
+4. Check that your Notion integration is properly configured and has access to the page
 
 ## Support
 
@@ -109,15 +130,16 @@ If you encounter any issues, please file them on our GitHub repository's issue t
 # obsidian_notion_sync/
 # ├── .github/
 # │   └── workflows/
-# │       └── publish.yml
+# │       └── sync.yml
 # ├── src/
 # │   └── obsidian_notion_sync/
 # │       ├── __init__.py
+# │       ├── __about__.py
+# │       ├── _version.py
 # │       ├── cli.py
 # │       ├── config.py
 # │       ├── sync.py
-# │       ├── github_manager.py
-# │       ├── git_manager.py
+# │       ├── sync_to_notion.py
 # │       └── exceptions.py
 # ├── tests/
 # │   └── __init__.py
@@ -125,5 +147,4 @@ If you encounter any issues, please file them on our GitHub repository's issue t
 # ├── LICENSE
 # ├── README.md
 # ├── pyproject.toml
-# └── setup.cfg
 ```
