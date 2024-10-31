@@ -1,0 +1,172 @@
+{
+  "main": {
+    "id": "9dc1a2459d75eb3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d165b52580ddf1ed",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f28df3d24d85389e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project Milestones.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Project Milestones"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e5ced59b5044189b",
+    "type": "split",
+    "children": [
+      {
+        "id": "52a9c5ee1f3be9ea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee0b491c54586258",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fc38622306a82e18",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2a8fc8ad2d460f41",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 251.5
+  },
+  "right": {
+    "id": "8aaeb7a40f0db64e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a5f99db1a6574a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec8d3b0a092c7b69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Project Milestones.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Project Milestones"
+            }
+          },
+          {
+            "id": "f24d1ddb2bf9802d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Project Milestones.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Project Milestones"
+            }
+          },
+          {
+            "id": "9232d8b0ae24722b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7d1118178d207a60",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Project Milestones.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Project Milestones"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f28df3d24d85389e",
+  "lastOpenFiles": [
+    "Randomizer Folder/Random work here.md",
+    "Work Files/Work Log 2.md",
+    "Work Files/Work Log 1.md",
+    "Project Milestones.md"
+  ]
+}

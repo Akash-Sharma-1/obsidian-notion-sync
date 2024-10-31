@@ -1,10 +1,10 @@
 # Obsidian Notion Sync
 
-A tool to sync Obsidian notes to Notion via GitHub.
+🧑‍💻 A tool to sync Obsidian notes to Notion via GitHub.
 
 ![Diagram](img/productImage.png)
 
-## Installation
+# 📩 Installation
 
 ```bash
 pip install obsidian-notion-sync
@@ -13,9 +13,26 @@ pip install obsidian-notion-sync
 [![PyPI - Version](https://img.shields.io/pypi/v/obsidian-notion-sync.svg)](https://pypi.org/project/obsidian-notion-sync)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/obsidian-notion-sync.svg)](https://pypi.org/project/obsidian-notion-sync)
 
-## Usage
 
-## Configuration
+# 🔄 Usage
+
+Basic sync:
+```bash
+obsidian-notion-sync
+```
+
+Enable debug logging:
+```bash
+obsidian-notion-sync --debug
+```
+
+View help:
+```bash
+obsidian-notion-sync --help
+```
+
+
+# 🛠️ Configuration
 
 Before using the tool, you need to set up the following environment variables:
 
@@ -27,7 +44,7 @@ Before using the tool, you need to set up the following environment variables:
 | REPO_NAME | Name for the GitHub repository | My-Second-Brain |
 | NOTION_PAGE_ID | ID of your Notion page | abc123... |
 
-### Setting up tokens
+## 🍪 Setting up tokens
 
 1. **GitHub Token**: 
    - Go to GitHub Settings → Developer Settings → Personal Access Tokens
@@ -44,7 +61,7 @@ __(more details below)__
    - Create a new page in Notion
    - Copy the page ID from the URL (it's the part after the page name and after the last '-')
 
-### (Detailed) Setting up notion page 
+## 📄 (Detailed) Setting up notion page 
 __(Skip this section if you were able to set the notion api tokens and page access  )__
 
 1. Create a notion page (The red box highlighted is the Page Id - you need)
@@ -62,25 +79,7 @@ __(Skip this section if you were able to set the notion api tokens and page acce
 5. Allow your notion page to gain access
 ![Allow page for integration access](img/PageAccessToIntegration.png)
 
-
-## Usage
-
-Basic sync:
-```bash
-obsidian-notion-sync
-```
-
-Enable debug logging:
-```bash
-obsidian-notion-sync --debug
-```
-
-View help:
-```bash
-obsidian-notion-sync --help
-```
-
-## Example Configuration Script
+## 📑 Example Configuration Script
 
 You can create a shell script to set up your environment:
 
@@ -97,7 +96,8 @@ obsidian-notion-sync --debug
 
 Save this as `run-sync.sh`, make it executable (`chmod +x run-sync.sh`), and run it with `./run-sync.sh`.
 
-## Troubleshooting
+
+## 🖥️ Troubleshooting
 
 If you encounter errors:
 
@@ -116,7 +116,7 @@ If you encounter errors:
 
 4. Check that your Notion integration is properly configured and has access to the page
 
-## Support
+## 🧑‍🧑‍🧒‍🧒 Support
 
 If you encounter any issues, please file them on our GitHub repository's issue tracker.
 
@@ -125,7 +125,7 @@ If you encounter any issues, please file them on our GitHub repository's issue t
 
 `obisidian-notion-sync` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
 
-# Directory structure:
+# 📂 Directory structure:
 ```
 # obsidian_notion_sync/
 # ├── .github/
