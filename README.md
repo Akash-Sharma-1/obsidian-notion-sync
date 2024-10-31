@@ -2,7 +2,7 @@
 
 🧑‍💻 A tool to sync Obsidian notes to Notion via GitHub.
 
-![Diagram](img/productImage.png)
+![Diagram](https://raw.githubusercontent.com/Akash-Sharma-1/obsidian-notion-sync/refs/heads/main/img/productImage.png?token=GHSAT0AAAAAACYDPIBASHJ7TPHSLI4RK5PSZZDVBUQ)
 
 # 📩 Installation
 
@@ -30,6 +30,34 @@ View help:
 ```bash
 obsidian-notion-sync --help
 ```
+
+# 🎛️ How does it work ? 
+
+This is how the pipeline's overview looks like: 
+
+![Pipeline](img/Pipeline.png)
+
+## 🎯 Detailed workflow details 
+
+1. Takes up file all the files from your obsidian vault. 
+
+![Obsidian Vault](img/obsidian_vault.png)
+
+2. Upon the running of the command Places it at the place of invocation (directory named 'ObsidianClonedVault')
+   
+![Collected Locally](img/CollectedLocally.png)
+
+3. It then syncs this folder with a Github Repo (you can supply the name for an existing repo or it would create a new one)  
+
+![Github sycning](img/SyncingWithGithub.png)
+
+4. Once the syncing is completed, it triggers a Github action that uploads these files to notion via Notion APIs
+
+![Github Actions](img/GithubActions.png)
+
+5.  Voila ! You can now access your notes on Notion too !
+
+![Notion Populates](img/Notion%20Populated.png)
 
 
 # 🛠️ Configuration
@@ -65,18 +93,23 @@ __(more details below)__
 __(Skip this section if you were able to set the notion api tokens and page access  )__
 
 1. Create a notion page (The red box highlighted is the Page Id - you need)
+
 ![Notion Page](img/Obsidian_notion_page.png)
 
 2. Go to https://www.notion.so/profile/integrations 
+   
 ![Integration](img/Integrations.png)
 
 3. Create an integration  
+
 ![New Integration](img/NewIntegrations.png)
 
 4. Copy this token 
+
 ![Copy This token](img/CopyThisToken.png)
 
 5. Allow your notion page to gain access
+
 ![Allow page for integration access](img/PageAccessToIntegration.png)
 
 ## 📑 Example Configuration Script
