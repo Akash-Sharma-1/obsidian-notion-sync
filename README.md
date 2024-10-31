@@ -1,8 +1,32 @@
+<p align="center">
+   <p align="center">
+      <b> A tool to sync Obsidian notes to Notion via GitHub </b> 👨‍💻...
+      <p align="center">
+      <img src="https://raw.githubusercontent.com/Akash-Sharma-1/obsidian-notion-sync/refs/heads/main/img/productImage.png" width="300">
+      <br/>
+      <a href="https://github.com/Akash-Sharma-1/obsidian-notion-sync/issues">Report a Bug/Issue</a> | <a href="https://github.com/Akash-Sharma-1/obsidian-notion-sync/discussions">Request a Feature</a> | <a href="https://github.com/users/Akash-Sharma-1/obsidian-notion-sync/1">View Project Status</a>
+        <p align="center"><img src="https://img.shields.io/badge/Tests-Passing-brightgreen" /> <img src="https://img.shields.io/badge/PR-Welcomed !-orange" />  <img src="https://img.shields.io/badge/License-MIT-blue.svg" /> <img src="https://img.shields.io/badge/Maintained%3F-Yes !-violet.svg" />
+
+   </p>
+</p>
+</p>
+
+---
+
 # Obsidian Notion Sync
-
-🧑‍💻 A tool to sync Obsidian notes to Notion via GitHub.
-
-![Diagram](https://raw.githubusercontent.com/Akash-Sharma-1/obsidian-notion-sync/refs/heads/main/img/productImage.png?token=GHSAT0AAAAAACYDPIBASHJ7TPHSLI4RK5PSZZDVBUQ)
+- [Obsidian Notion Sync](#obsidian-notion-sync)
+- [📩 Installation](#-installation)
+- [🔄 Usage](#-usage)
+- [🎛️ How does it work ?](#️-how-does-it-work-)
+  - [🎯 Detailed workflow details](#-detailed-workflow-details)
+- [🛠️ Configuration](#️-configuration)
+  - [🍪 Setting up tokens](#-setting-up-tokens)
+  - [📄 (Detailed) Setting up notion page](#-detailed-setting-up-notion-page)
+  - [📑 Example Configuration Script](#-example-configuration-script)
+  - [🖥️ Troubleshooting](#️-troubleshooting)
+  - [🧑‍🧑‍🧒‍🧒 Support](#-support)
+  - [License](#license)
+- [📂 Directory structure:](#-directory-structure)
 
 # 📩 Installation
 
