@@ -29,15 +29,22 @@ pip install obsidian-notion-sync
 
 There are 2 modes to use it : 
 
-**Doing Obsidian sync with Git** (this automatically triggers the below mode with Github Action)
+**Doing Obsidian sync with Git** (this automatically triggers the below mode for notion syncing with Github Action)
 ```bash
 >> obsidian-notion-sync git-sync
 ```
+Note :
+- Creates a clone for your Obsidian Vault
+- Syncs it as a git repo
 
-**Doing Obsidian Vault sync with Notion**
+
+**(Optional) Doing Git's Obsidian Vault sync with Notion**
 ```bash
 >> obsidian-notion-sync notion-sync
 ```
+Note :
+- To be done with the created git repo and Obsidian Vault by the above mode
+- Syncs it with notion
 
 **Synopsis**
 ```bash
