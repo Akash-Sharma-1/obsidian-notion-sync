@@ -244,7 +244,7 @@ class NotionSync:
             workflow_dir.mkdir(parents=True, exist_ok=True)
             
             # Setup GitHub Actions
-            WorkflowManager.create_workflow_file()
+            # WorkflowManager.create_workflow_file()
             
             # Commit and push workflow
             self.git_manager.commit_changes("Add GitHub Actions workflow")

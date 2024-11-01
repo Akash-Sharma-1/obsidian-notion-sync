@@ -9,25 +9,29 @@ from obsidian_notion_sync.sync_to_notion import main as notion_sync_main
 
 
 @click.group()
+@click.pass_context
 @click.option('--debug', is_flag=True, help='Enable debug logging')
-def main(debug):
+def main(ctx, debug):
     """Sync Obsidian notes to Notion via GitHub"""
+    
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
-    
-    try:
-        config = SyncConfig.from_env()
-        sync = NotionSync(config)
-        sync.run()
-    except Exception as e:
-        logging.error(f"Application error: {str(e)}")
-        sys.exit(1)
+
+    # If no subcommand is used, default to sync with Github
+    if ctx.invoked_subcommand is None:
+        try:
+            config = SyncConfig.from_env()
+            sync = NotionSync(config)
+            sync.run()
+        except Exception as e:
+            logging.error(f"Application error: {str(e)}")
+            sys.exit(1)
 
 
 @main.command()
-def gitSync():
+def git_sync():
     """Sync Obsidian notes to GitHub"""
     try:
         config = SyncConfig.from_env()
@@ -38,7 +42,7 @@ def gitSync():
         sys.exit(1)
 
 @main.command()
-def notionSync():
+def notion_sync():
     """Sync Github placed Obsidian notes with Notion"""
     try:
         notion_sync_main()

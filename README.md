@@ -27,19 +27,33 @@ pip install obsidian-notion-sync
 
 # 🔄 Usage
 
-Basic **sync**:
+There are 2 modes to use it : 
+
+**Doing Obsidian sync with Git** (this automatically triggers the below mode with Github Action)
 ```bash
-obsidian-notion-sync
+>> obsidian-notion-sync git-sync
 ```
 
-Enable **debug logging**:
+**Doing Obsidian Vault sync with Notion**
 ```bash
-obsidian-notion-sync --debug
+>> obsidian-notion-sync notion-sync
 ```
 
-View **help**:
+**Synopsis**
 ```bash
-obsidian-notion-sync --help
+>> obsidian-notion-sync
+
+Usage: obsidian-notion-sync [OPTIONS] COMMAND [ARGS]...
+Sync Obsidian notes to Notion via GitHub
+
+Options:
+  --debug  Enable debug logging
+  --help   Show this message and exit.
+
+Commands:
+  git-sync     Sync Obsidian notes to GitHub
+  notion-sync  Sync Github placed Obsidian notes with Notion
+
 ```
 
 # 🎛️ How does it work ? 
