@@ -25,4 +25,5 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           obsidian-notion-sync notion-sync
+
     
