@@ -169,7 +169,9 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
+          cd $GITHUB_WORKSPACE
           obsidian-notion-sync notion-sync
+
     """
         
         workflow_path = workflow_dir / "sync.yml"
