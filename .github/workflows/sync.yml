@@ -17,10 +17,7 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          pip install hatch requests markdown2 notion-client logging click
-      - name : build my module
-        run: |
-          python -m pip install -e .
+          pip install requests markdown2 notion-client logging click obsidian_notion_sync 
       - name: Sync to Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
