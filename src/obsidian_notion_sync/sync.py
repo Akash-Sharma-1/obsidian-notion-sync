@@ -71,7 +71,7 @@ class GitManager:
     def __init__(self, repo_name: str):
         self.repo_name = repo_name
         # Use absolute path to root folder's ObsidianClonedVault
-        self.repo_dir = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        self.repo_dir = Path.cwd()
         self.original_dir = Path.cwd()
         
     def init_repo(self) -> None:
@@ -141,7 +141,7 @@ class WorkflowManager:
     @staticmethod
     def create_workflow_file() -> None:
         """Create GitHub Actions workflow file"""
-        workflow_dir =  Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))) / ".github" / "workflows"
+        workflow_dir =  Path.cwd() / ".github" / "workflows"
         workflow_dir.mkdir(parents=True, exist_ok=True)
         
         workflow_content = """
@@ -163,14 +163,13 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          pip install requests markdown2 notion-client logging
+          pip install requests markdown2 notion-client logging click obsidian_notion_sync 
       - name: Sync to Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          cd src/obsidian_notion_sync
-          python sync_to_notion.py
+          obsidian-notion-sync notion-sync
     """
         
         workflow_path = workflow_dir / "sync.yml"
@@ -184,7 +183,7 @@ class FileSync:
     def sync_obsidian_files(source_dir: Path) -> None:
         """Sync Obsidian files to root's 'ObsidianClonedVault' directory"""
         # Get the absolute path to ObsidianClonedVault in root
-        target_dir = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))) / "ObsidianClonedVault"
+        target_dir = Path.cwd() / "ObsidianClonedVault"
         
         try:
             # Create the target directory if it doesn't exist
@@ -244,7 +243,7 @@ class NotionSync:
             workflow_dir.mkdir(parents=True, exist_ok=True)
             
             # Setup GitHub Actions
-            # WorkflowManager.create_workflow_file()
+            WorkflowManager.create_workflow_file()
             
             # Commit and push workflow
             self.git_manager.commit_changes("Add GitHub Actions workflow")

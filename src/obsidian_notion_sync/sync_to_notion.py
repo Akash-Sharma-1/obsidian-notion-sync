@@ -193,8 +193,10 @@ def main():
     processor = FileProcessor(notion_sync)
     
     logger.info(f"Starting sync to Notion database: {database_id}")
-
-    directory = Path(__file__).resolve().parent.parent.parent / "ObsidianClonedVault"
+    # directory = Path( os.environ['GITHUB_WORKSPACE']) /"ObsidianClonedVault"
+    directory = "ObsidianClonedVault"
+    logger.info(Path.cwd())
+    
     processor.process_directory(directory, database_id)
     logger.info("Sync to Notion completed.")
 
