@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "obsidian-notion-sync"
 description = "Sync Obsidian notes to Notion via GitHub"
 readme = "README.md"
-version = "0.3"
+version = "0.5"
 requires-python = ">=3.7"
 license = "MIT"
 authors = [
