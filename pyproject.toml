@@ -27,6 +27,7 @@ dependencies = [
     "notion-client>=1.0.0",
     "markdown2>=2.4.0",
     "requests>=2.25.0",
+    "click>=8.0.0"
 ]
 
 [project.scripts]

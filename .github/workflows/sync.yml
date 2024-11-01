@@ -17,12 +17,11 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          pip install requests markdown2 notion-client logging obsidian_notion_sync
+          pip install requests markdown2 notion-client logging click obsidian_notion_sync 
       - name: Sync to Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          cd src/obsidian_notion_sync
           obsidian-notion-sync notion-sync
     
